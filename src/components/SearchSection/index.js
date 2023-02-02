@@ -26,9 +26,11 @@ const SearchSection = (props) => {
      
         await fetch('https://6jhukudl14.execute-api.us-west-2.amazonaws.com/reservation/available',{
             method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
+            //mode: 'cors',
+            /*headers: {
+                'Content-Type': 'application/json',
+                'Access-Control-Allow-Origin': '*'
+            },*/
             body: JSON.stringify({
                 "fIni": fIni,
                 "fFin": fEnd,
@@ -44,12 +46,6 @@ const SearchSection = (props) => {
 
     const ClickHandler = () => {
         window.scrollTo(10, 0);
-        
-        
-        console.log(endDate);
-        console.log(adult);
-        console.log(child);
-        console.log(room);
     }
 
     const [adult, setCount] = useState(0);
